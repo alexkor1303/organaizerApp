@@ -1,0 +1,54 @@
+.gameWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 10px;
+  h1 {
+    cursor: default;
+    margin-bottom: 20px;
+    text-shadow: 1px 10px 6px rgba(0, 0, 0, 0.181);
+  }
+  .progressBar {
+    align-self: flex-start;
+    width: 20%;
+    height: 5px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, rgb(161, 86, 86) 0%, var(--red-color));
+    transition: all 0.5s ease;
+  }
+  ul {
+    list-style: none;
+    width: 50%;
+    .listBlock {
+      height: 28px;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      align-content: center;
+      width: 110%;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(0, 0, 0, 0.148);
+      border-radius: 8px;
+      &:hover {
+        box-shadow: 1px 10px 6px rgba(0, 0, 0, 0.181);
+        border: 2px solid rgba(0, 0, 0, 0.394);
+      }
+    }
+    li {
+      cursor: pointer;
+      font-weight: bold;
+    }
+  }
+}
+
+.result {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  row-gap: 15px;
+  .Pointcolor {
+    color: red;
+  }
+}

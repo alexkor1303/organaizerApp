@@ -1,0 +1,93 @@
+.addBlock {
+  min-height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  background-color: rgb(232, 232, 232);
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.35);
+  .input {
+    width: 80%;
+    border: none;
+    height: 25px;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-weight: bold;
+  }
+  ::placeholder {
+    color: rgb(222, 222, 222);
+  }
+  .addButton {
+    display: flex;
+    align-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    :hover {
+      transition: all 0.3s;
+      color: rgb(133, 200, 139);
+    }
+  }
+  transition: all 0.3s ease;
+}
+.itemWrapper {
+  min-height: 45px;
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 0.1fr;
+  grid-template-areas: "checkbox text stash";
+  align-items: center;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  font-weight: bold;
+  background-color: rgb(214, 214, 214);
+  border-radius: 8px;
+  color: white;
+  transition: all 0.3s;
+}
+.itemWrapperCompleted {
+  background-color: rgb(133, 200, 139);
+}
+
+.checkBox {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  background-color: rgb(214, 214, 214);
+  border-radius: 8px;
+  border: 2px solid white;
+  cursor: pointer;
+  :hover {
+    background-color: rgba(255, 255, 255, 0.474);
+  }
+  .icon {
+    color: rgb(214, 214, 214);
+  }
+}
+.isCompletedButton {
+  border: 2px solid rgb(108, 255, 111);
+  background-color: white;
+  .icon {
+    color: rgb(108, 255, 111);
+  }
+}
+
+.stash {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  display: none;
+}
+.stashVisible {
+  display: block;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  :hover {
+    color: rgb(255, 118, 118);
+  }
+}
