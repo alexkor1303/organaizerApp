@@ -1,3 +1,21 @@
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    background-color: rgb(255, 110, 110);
+    transform: translateX(0);
+  }
+}
 .addBlock {
   min-height: 45px;
   display: flex;
@@ -16,9 +34,15 @@
     border-radius: 5px;
     padding-left: 10px;
     font-weight: bold;
+    transition: all 0.3s;
   }
   ::placeholder {
     color: rgb(222, 222, 222);
+  }
+  .emptyInput {
+    background-color: rgb(255, 110, 110);
+    animation: shake 0.5s ease;
+    color: white;
   }
   .addButton {
     display: flex;
@@ -29,7 +53,7 @@
     color: white;
     :hover {
       transition: all 0.3s;
-      color: rgb(133, 200, 139);
+      color: var(--light-green);
     }
   }
   transition: all 0.3s ease;
@@ -49,7 +73,7 @@
   transition: all 0.3s;
 }
 .itemWrapperCompleted {
-  background-color: rgb(133, 200, 139);
+  background-color: var(--light-green);
 }
 
 .checkBox {
@@ -68,10 +92,10 @@
   }
 }
 .isCompletedButton {
-  border: 2px solid rgb(108, 255, 111);
+  border: 2px solid var(--bright-green);
   background-color: white;
   .icon {
-    color: rgb(108, 255, 111);
+    color: var(--bright-green);
   }
 }
 
@@ -88,6 +112,6 @@
   border: none;
   cursor: pointer;
   :hover {
-    color: rgb(255, 118, 118);
+    color: var(--light-red);
   }
 }

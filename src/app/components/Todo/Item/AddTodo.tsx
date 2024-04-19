@@ -1,5 +1,6 @@
 import { useState } from "react";
 import style from "./TodoItem.module.scss";
+import cn from "classnames";
 import { MdAddBox } from "react-icons/md";
 
 interface addElemProp {
@@ -8,13 +9,14 @@ interface addElemProp {
 
 export const AddItemBlock = ({ addElem }: addElemProp) => {
   const [title, setTitle] = useState("");
-
+  const [empty, setEmpty] = useState(false);
   const handleAddElem = () => {
     if (title.trim() !== "") {
       addElem(title);
       setTitle("");
+      setEmpty(false);
     } else {
-      alert("Пустые задачи добавлять нельзя!");
+      setEmpty(!empty);
     }
   };
 
@@ -24,7 +26,7 @@ export const AddItemBlock = ({ addElem }: addElemProp) => {
         onChange={(e) => setTitle(e.target.value)}
         value={title}
         type="text"
-        className={style.input}
+        className={cn(style.input, { [style.emptyInput]: empty === true })}
         placeholder="enter your task"
         onKeyDown={(e) => e.key === "Enter" && handleAddElem()}
       />

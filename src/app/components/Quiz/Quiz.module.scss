@@ -16,7 +16,7 @@
     width: 20%;
     height: 5px;
     border-radius: 5px;
-    background: linear-gradient(90deg, rgb(161, 86, 86) 0%, var(--red-color));
+    background: linear-gradient(90deg, var(--light-green), var(--bright-green));
     transition: all 0.5s ease;
   }
   ul {

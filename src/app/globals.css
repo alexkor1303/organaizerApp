@@ -3,6 +3,9 @@
   --main-bg-color: rgb(0, 0, 0);
   --wrapper-bg-color: rgb(255, 255, 255);
   --red-color: rgb(212, 65, 65);
+  --light-red: rgb(255, 110, 110);
+  --light-green: rgb(133, 200, 139);
+  --bright-green: rgb(108, 255, 111);
 }
 /* layout styles */
 * {

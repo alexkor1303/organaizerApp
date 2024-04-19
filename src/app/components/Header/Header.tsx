@@ -9,18 +9,13 @@ import { usePathname } from "next/navigation";
 
 export const Header = ({}: Props): JSX.Element => {
   const pathName = usePathname();
-  const name = "Name";
-  const secondName = "SecondName";
   return (
     <header className={style.wrapper}>
       <section className={style.user_section}>
         <div className={style.user_image}>
           <Image src="./avatar.svg" width={50} height={50} alt="profileImage" />
         </div>
-        <div className={style.user_info}>
-          <p>{name}</p>
-          <p>{secondName}</p>
-        </div>
+        <div className={style.user_info}></div>
       </section>
       <section className={style.navigation_section}>
         <nav>

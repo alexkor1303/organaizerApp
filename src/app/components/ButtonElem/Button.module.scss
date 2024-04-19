@@ -14,12 +14,12 @@
   border: 3px solid rgb(91, 91, 91);
 }
 .red {
-  background-color: var(--red-color);
+  background-color: var(--light-red);
   color: white;
   border: 3px solid rgb(255, 144, 144);
 }
 .green {
-  background-color: rgb(130, 255, 130);
+  background-color: var(--light-green);
   color: white;
-  border: 3px solid rgb(121, 176, 121);
+  border: 3px solid var(--bright-green);
 }

@@ -8,7 +8,6 @@ import { AddItemBlock } from "./Item/AddTodo";
 import { HomeBlock, ButtonElem } from "..";
 type TodoProps = {
   className: string;
-  children: ReactNode;
 };
 
 export function Todo({ className }: TodoProps) {
