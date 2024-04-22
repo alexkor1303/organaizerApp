@@ -1,21 +1,46 @@
 "use client";
+import { ModalWindow } from "../index";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Props from "./HeaderProps";
-import { LinksList } from "./HeaderLink";
 import style from "./Header.module.scss";
 import Image from "next/image";
-import Link from "next/link";
 import cn from "classnames";
-import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { LinksList } from "./HeaderLink";
 
 export const Header = ({}: Props): JSX.Element => {
+  const [openModal, setOpenModal] = useState(false);
+  const сloseModal = () => {
+    setOpenModal(false);
+  };
+  const [info, setInfo] = useState({
+    profileName: `User Name`,
+    profilePhoto: `./avatar.svg`,
+  });
+  const setUser = (userName: string, userPhoto: string) => {
+    setInfo({
+      profileName: userName,
+      profilePhoto: userPhoto,
+    });
+  };
   const pathName = usePathname();
   return (
     <header className={style.wrapper}>
       <section className={style.user_section}>
         <div className={style.user_image}>
-          <Image src="./avatar.svg" width={50} height={50} alt="profileImage" />
+          <Image
+            src={info.profilePhoto}
+            width={70}
+            height={70}
+            alt="profileImage"
+          />
         </div>
-        <div className={style.user_info}></div>
+        <div className={style.user_info}>
+          {info.profileName.split(" ").map((word, index) => (
+            <p key={index}>{word}</p>
+          ))}
+        </div>
       </section>
       <section className={style.navigation_section}>
         <nav>
@@ -30,6 +55,16 @@ export const Header = ({}: Props): JSX.Element => {
                 </li>
               );
             })}
+            <button
+              className={cn(style.modalButton)}
+              onClick={() => setOpenModal(true)}>
+              Login
+            </button>
+            <ModalWindow
+              openModal={openModal}
+              сloseModal={сloseModal}
+              setUser={setUser}
+            />
           </ul>
         </nav>
       </section>

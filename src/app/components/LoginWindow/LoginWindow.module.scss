@@ -1,0 +1,22 @@
+.closed {
+  display: none;
+}
+.opened {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  .modalContent {
+    width: 80%; /* желаемая ширина модального окна */
+    max-width: 600px; /* максимальная ширина модального окна */
+    background-color: #fff; /* цвет фона модального окна */
+    padding: 20px; /* отступы внутри модального окна */
+    border-radius: 8px; /* скругленные углы */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* тень для эффекта всплывания */
+  }
+}
